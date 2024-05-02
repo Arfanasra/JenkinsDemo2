@@ -1,7 +1,7 @@
 package com.base;
 
-// import org.openqa.selenium.WebDriver;
-// import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterMethod;
@@ -14,12 +14,11 @@ public class BaseClass {
 	
 	@BeforeMethod
 	public void setup() {
-		// if (System.getProperty("browser").equalsIgnoreCase("Chrome")) {
-		// 	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Arfan\\Downloads\\chromedriver-win32\\chromedriver-win32\\chromedriver.exe");
-		// 	WebDriverManager.chromedriver().setup();
-		// 	driver = new ChromeDriver();
-		// } else
-		if (System.getProperty("browser").equalsIgnoreCase("Firefox")) {
+		if (System.getProperty("browser").equalsIgnoreCase("Chrome")) {
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Arfan\\Downloads\\chromedriver-win32\\chromedriver-win32\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		} else if (System.getProperty("browser").equalsIgnoreCase("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		} else if (System.getProperty("browser").equalsIgnoreCase("IE")) {
